@@ -14,5 +14,5 @@ Add the library to your `build.gradle`:
 ```gradle
 
 dependencies {
-    implementation 'com.changelog.mdevz:changelog-lib:1.0.0'
+    implementation 'com.changelog.mdevz:changelog:1.0.0'
 }
