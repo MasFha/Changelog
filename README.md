@@ -1,4 +1,4 @@
-# Changelog Library
+## Changelog Library
 
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![GitHub Release](https://img.shields.io/github/v/release/YOUR_GITHUB_USERNAME/changelog-lib)](https://github.com/YOUR_GITHUB_USERNAME/changelog-lib/releases)
@@ -38,7 +38,7 @@
  **Initialize the Client**
  
   Create an instance of GithubApiClient with your GitHub credentials:
-```java
+  ```java
 GithubApiClient client = new GithubApiClient(
     "your-github-token",
     "repository-owner",
