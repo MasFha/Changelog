@@ -17,8 +17,8 @@ dependencies {
     implementation 'com.changelog.mdevz:changelog:1.0.0'
 }
 
-##Usage
-#Initialize the Client
+## Usage
+# Initialize the Client
 GithubApiClient client = new GithubApiClient(
     "your-github-token",
     "repository-owner",
