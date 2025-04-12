@@ -31,3 +31,19 @@
            }
        }
    }
+
+   
+# Usage
+
+ **Initialize the Client**
+ 
+  Create an instance of GithubApiClient with your GitHub credentials:
+```java
+GithubApiClient client = new GithubApiClient(
+    "your-github-token",
+    "repository-owner",
+    "repository-name",
+    true, // isPrivate
+    "changelog.json",
+    "main"
+);
