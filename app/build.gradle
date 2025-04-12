@@ -1,0 +1,61 @@
+apply plugin: 'com.android.library'
+apply plugin: 'maven-publish'
+
+android {
+compileSdk 34
+
+defaultConfig {
+minSdk 21
+targetSdk 34
+versionCode 1
+versionName "1.0.0"
+
+testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+}
+
+buildTypes {
+release {
+minifyEnabled false
+proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+}
+}
+
+compileOptions {
+sourceCompatibility JavaVersion.VERSION_1_8
+targetCompatibility JavaVersion.VERSION_1_8
+}
+}
+
+dependencies {
+implementation 'androidx.appcompat:appcompat:1.6.1'
+implementation 'com.google.code.gson:gson:2.10.1'
+implementation 'com.squareup.okhttp3:okhttp:4.12.0'
+testImplementation 'junit:junit:4.13.2'
+androidTestImplementation 'androidx.test.ext:junit:1.2.1'
+androidTestImplementation 'androidx.test.espresso:espresso-core:3.6.1'
+}
+
+// Publish the library to GitHub Packages
+publishing {
+publications {
+maven(MavenPublication) {
+groupId = 'com.changelog.mdevz'
+artifactId = 'changelog'
+version = '1.0.0'
+
+afterEvaluate {
+from components.release
+}
+}
+}
+repositories {
+maven {
+name = "Changelog"
+url = uri("https://maven.pkg.github.com/MasFha/Changelog")
+credentials {
+username = project.findProperty("gpr.user") ?: System.getenv("GITHUB_USERNAME")
+password = project.findProperty("gpr.key") ?: System.getenv("GITHUB_TOKEN")
+}
+}
+}
+}
