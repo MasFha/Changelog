@@ -16,3 +16,14 @@ Add the library to your `build.gradle`:
 dependencies {
     implementation 'com.changelog.mdevz:changelog:1.0.0'
 }
+
+##Usage
+#Initialize the Client
+GithubApiClient client = new GithubApiClient(
+    "your-github-token",
+    "repository-owner",
+    "repository-name",
+    true, // isPrivate
+    "changelog.json",
+    "main"
+);
